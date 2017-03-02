@@ -20,6 +20,16 @@
     pdftitle={Ejercicios resueltos unidad 0},
 }
 \fi
+
+
+
+%%%%
+% Para los conjuntos, defino unas figuras que uso frecuentemente:
+\def\circuloN{( 30:0.8) circle (1.4)}
+\def\circuloM{(270:0.8) circle (1.4)}
+\def\circuloP{(150:0.8) circle (1.4)}
+%%%%%
+
 \begin{document}
 \maketitle
 \subsubsection*{Actividad 4}
@@ -363,6 +373,115 @@ Libra, Piscis$\}$
 (8,4 ) ; (8,6 )\}$
 \item $C \times B = \{(5,1 ) ; (5,2 ) ; (5,3 ) ; (5,4 ) ; (5,6 ) ; (7,1 ) ; (7,2 ) ; (7,3 ) ;\\
   (7,6 ) ; (7,4 ) ;(9,1 ) ; (9,2 ) ; (9,3 ) ; (9,4 ) ;(9,6)\}$
+\end{enumerate}
+
+
+\subsubsection*{Actividad 33}
+\begin{enumerate}[a)]
+\item $\textnormal{M} \cap \textnormal{N} =\{5, 7\}$ \\
+\begin{tikzpicture}
+%Esto es para colorear el resultado (una forma de hacerlo):
+  \begin{scope}
+  \clip ( 0:0.8) circle (1.4);
+  \fill[lightgray] (180:0.8) circle (1.4);
+  \end{scope}
+%%%%%%%%%%%%%%%%%
+
+%Dibujo los círculos: sintáxis:
+%(rotación: radio de desplazamiento) figura (tamaño de la misma)
+    \draw[black]   ( 0:0.8) circle (1.4);
+    \draw[black] (180:0.8) circle (1.4);
+ 
+ % Ubico los elementos
+  \node at ( 180:1.3)   {8};
+  \node at ( 140:1.4)   {0};
+  \node at ( 220:1.4)   {2};
+  \node at (135:2.15) {\emph{M}};
+  \node at ( 330:1.2)   {6};
+  \node at ( 25:1.4)   {9};
+  \node[align=center] at ( 45:2.15) {\emph{N}};
+  \node[align=center] {5 \\ \\7 };
+\end{tikzpicture}
+
+\item $\textnormal{M} \cap \textnormal{N} \cap \textnormal{P} =\{5\}$ \\ \\
+\begin{tikzpicture}
+%Esto es para colorear algún subconjunto:
+  \begin{scope}
+  \clip \circuloN;
+  \clip \circuloM;
+  \fill[lightgray] \circuloP;
+  \end{scope}
+%%%%%%%%%%%%%%%%%
+
+
+  \draw[black]   ( 30:0.8) circle (1.4);
+  \draw[black] (150:0.8) circle (1.4);
+  \draw[black] (270:0.8) circle (1.4);
+ 
+  \node at (270:2.5) {\emph{M}};
+  \node[align=center] at ( 30:2.5) {\emph{N}};
+  \node[align=center] at ( 150:2.5) {\emph{P}};
+  
+  \node at ( 185:0.9)   {8};
+  \node at ( 225:0.9)   {0};
+  \node at ( 150:1.4)   {1};
+  \node at ( 210:1.3)   {2};
+  \node at ( 90:1.)   {6};
+  \node at ( 35:1.4)   {9};
+  \node {5};
+  \node at (-25:1){ 7 };
+\end{tikzpicture}
+\item 
+\item $\textnormal{M} - \textnormal{N} = \{7\}$ \\
+\begin{tikzpicture}
+%Coloreo:
+  \begin{scope}
+  \clip (-2,-2) rectangle (2.5,2) (180:0.8) circle (1.4);
+  \fill[lightgray] (0:0.8) circle (1.4) ;
+  \end{scope}
+
+%Dibujo los círculos: sintáxis:
+%(rotación: radio de desplazamiento) figura (tamaño de la misma)
+    \draw[black]   ( 0:0.8) circle (1.4);
+    \draw[black] (180:0.8) circle (1.4);
+ 
+ % Ubico los elementos
+  \node at ( 150:1.3)   {1};
+  \node at ( 200:1.4)   {6};
+  \node at (135:2.15) {\emph{P}};
+  \node at ( 360:1.2)   {7};
+  \node[align=center] at ( 45:2.15) {\emph{M}};
+  \node[align=center] {0 \\5 \\ 2 \\8 };
+\end{tikzpicture}
+
+\item $\textnormal{M} \cap (\textnormal{P} - \textnormal{N}) = \{0,2,8\}$ 
+
+\begin{tikzpicture}
+%Esto es para colorear algún subconjunto:
+  \begin{scope}
+  \clip (-2.5,-2) rectangle (2.5,2) \circuloN;
+  \clip \circuloM \circuloN;
+  \fill[lightgray] \circuloP ;
+  \end{scope}
+%%%%%%%%%%%%%%%%%
+
+  \draw[black]   \circuloN;
+  \draw[black] \circuloP;
+  \draw[black] \circuloM;
+
+  \node at (270:2.5) {\emph{M}};
+  \node[align=center] at ( 30:2.5) {\emph{N}};
+  \node[align=center] at ( 150:2.5) {\emph{P}};
+  
+  \node at ( 185:0.9)   {8};
+  \node at ( 225:0.9)   {0};
+  \node at ( 150:1.4)   {1};
+  \node at ( 210:1.3)   {2};
+  \node at ( 90:1.)   {6};
+  \node at ( 35:1.4)   {9};
+  \node {5};
+  \node at (-25:1){ 7 };
+\end{tikzpicture}
 \end{enumerate}
 
 
