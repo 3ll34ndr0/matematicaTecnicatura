@@ -532,22 +532,65 @@ Están en ambos equipos: Edgar, Rolando, Cristina y Diego.
 Están en el equipo de futbol solamente: Pedro, Hugo, Roberto.
 Están sólo en uno de los dos equipos: Pedro, Hugo, Roberto, Andrea y José.
 
-\item 
+\item Luego de realizar el diagrama de Venn, extraemos las siguientes conclusiones: Todos los géneros prestados: Pop, Rock, Punk, Gothic, Clasica, Jazz, Salsa, Hip hop, Metal, Industrial. Géneros a oir primero: Pop, Gothic.
+
 \begin{tikzpicture}
-    \draw[black]   ( 0:1.2) circle (2);
-    \draw[black] (180:1.2) circle (2);
+    \draw[black]   ( 0:.85) circle (1.5);
+    \draw[black] (180:.85) circle (1.5);
     %(-4,-2.5) rectangle (5,3) node [text=black,above] {$H$};
   
-  \node at ( 150:2)   {Rock};
-  \node at ( 210:2)   {Punck};
-  \node at ( 180:2)   {Clasica};
-  \node at ( 10:2)   {Jazz};
-  \node at (145:3.8) {\emph{Laura};
-  \node at ( 330:2)   {Andrea};
-  \node at ( 25:2)   {José};
-  \node[align=center] at ( 46:3) {\emph{Diana}};
+  \node at ( 150:1.5)   {Rock};
+  \node at ( 195:1.5)   {Punk};
+  \node at ( 180:1.5)   {Clasica};
+  \node at ( 165:1.5)   {Jazz};
+  \node at (145:3.0) {\emph{Laura}};
+  \node at ( 345:1.5)   {Salsa};
+  \node at ( 15:1.5)   {Hip hop};
+  \node at ( 30:1.5)   {Metal};
+  \node at ( 0:1.5)   {Industrial};
+  \node[align=center] at (46:2.5) {\emph{Diana}};
   \node[align=center] {Pop\\Gothic};
 \end{tikzpicture}
+
+
+
+\item Practican natación: 20. Sólo natación: 8. Algún deporte: 40
+
+\begin{tikzpicture}
+
+    \draw[black]   ( 0:.5) circle (1);
+    \draw[black] (180:.5) circle (1);
+    \draw[black] (-2.5,-1.75) rectangle (2.5,1.75) node [text=black,above] {$U$};
+  
+%(-2,-2) rectangle (3,2) node [text=black,above] {$H$};
+
+  \node at ( 270:1.3)    {10};
+  \node at ( 45:1.75)    {Futbol};
+  \node at ( 180:1.0)   {17};
+  \node at (135:1.75) {Natación};
+  \node at ( 0:1.0)   {8};
+  \node  {12};
+\end{tikzpicture}
+
+\item 
+
+
+\begin{tikzpicture}
+
+    \draw[black]   ( 0:.5) circle (1);
+    \draw[black] (180:.5) circle (1);
+    \draw[black] (-2.5,-1.75) rectangle (2.5,1.75) node [text=black,above] {$U$};
+  
+
+  \node at ( 270:1.3)    {20};
+  \node at ( 45:1.75)    {Física};
+  \node at ( 180:1.0)   {40};
+  \node at (135:1.75) {Matemática};
+  \node at ( 0:1.0)   {25};
+  \node  {12};
+\end{tikzpicture}
+
+
 
 \end{enumerate}
 
