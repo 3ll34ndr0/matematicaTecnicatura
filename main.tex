@@ -10,7 +10,27 @@
 \usepackage{enumerate}
 \usepackage{verbatim}
 \usepackage{tikz}
+
+\newcommand*{\TitleParbox}[1]{\parbox[c]{0.75cm}{#1}}%
+\newcommand*{\ntpb}[1]{\parbox[c]{1.5cm}{#1}}%
+% Para hacer más los parentesis de tamaño automático:
+\newcommand*{\paren}[1]{\left(#1\right)}%
+% Lo mismo para los corchetes
+\newcommand*{\corche}[1]{\left[#1\right]}%
+\usepackage{multicol}
+\usepackage{cancel}
+
+
 \usepackage{graphicx}
+%%%% Para las rectas numéricas %%%%
+\usetikzlibrary{decorations.markings}
+\tikzset{
+   thickest/.style={line width=2pt},
+   empty/.style={decoration={markings,
+   mark=at position #1 with {\fill[white,draw=black,thin] circle (2pt);}},postaction={decorate}},
+   full/.style={decoration={markings,
+   mark=at position #1 with {\fill circle (2pt);}},postaction={decorate}},
+         }
 
 \title{Resultados Unidad 0}
 %\author{}
@@ -814,18 +834,6 @@ Están sólo en uno de los dos equipos: Pedro, Hugo, Roberto, Andrea y José.
 		  \item V
 \end{enumerate}
 
-%\subsubsection*{Actividad 76} Fijarse porque hay muchas raíces complejas...
-%%\begin{enumerate}[a)]
-%		  \item Raíces: $x_0 = 3$, $x_1=2$. Factorizado: $(x-3)(x-2)$
-%		  \item $x_0 = 4$, $x_1=-4$, $ \quad (x-4)(x+4)$
-%		  \item $x_0 = \sqrt{3}i$, $x_1 = -\sqrt{3}i$, $ \quad (x-\sqrt3i)(x+\sqrt3i)$
-%		  \item $x_0 = -\frac{\sqrt3i+1}{2}$, $x_1 = \frac{i\sqrt3i+1}{2}$, $ \quad (x+\frac{\sqrt3i+1}{2})(x-\frac{\sqrt3i+1}{2})$
-%		  \item $x_0 = -\frac{1}{10}$, $x_1=\frac{1}{10}$, $ \quad (x+0.1)(x-0.1)$
-%
-%		  \item $$
-%\end{enumerate}
-
-
 
 
 
@@ -844,16 +852,90 @@ Están sólo en uno de los dos equipos: Pedro, Hugo, Roberto, Andrea y José.
 
 \subsubsection*{Actividad 67}
 \begin{enumerate}[a)]
-		  \item $x \leq 3 \quad (-\infty ,3]$
-		  \item $ x > -10 \qquad (-10,\infty)$
-		  \item $ x \leq \frac{1}{4} \qquad (-\infty ,\frac{1}{4}]$
-		  \item $ x \ge -18 \qquad [-18,\infty)$
-		  \item $ a \ge 2 $
-		  \item $ y > 1$
-		  \item $ z \le -5$
-		  \item $ n > -2$
-		  \item $ y \ge -2$
+% a)
+		  \item \ntpb{$x \leq 3$}\ntpb{ $(-\infty ,3]$} \begin{tikzpicture}[x=2mm,y=0.5em]
+		  \draw (-8,0) -- (6,0);
+		  \draw[dashed] (3,-1) -- (3,1);
+		  \draw[thickest,full=0,-stealth] (3,0) -- (-14,0);									 
+      \node[anchor=north east] at (3,0) {3};
+\end{tikzpicture}
+% b)
+			  \item \ntpb{$ x > -10$}  \ntpb{$(-10,\infty)$} \begin{tikzpicture}[x=2mm,y=0.6em]
+		  \draw (-14,0) -- (0,0); 
+		  \draw[dashed] (-10,-1) -- (-10,1);
+		  \draw[thickest,empty=0,-stealth] (-10,0) -- (6,0);									 
+      \node[anchor=north west] at (-10,0) {-10};
+\end{tikzpicture}
+ % c)
+		  \item \ntpb{$ x \leq \frac{1}{4}$} \ntpb{$(-\infty ,\frac{1}{4}]$} \begin{tikzpicture}[x=2mm,y=0.5em]
+		  \draw (-8,0) -- (6,0);
+		  \draw[dashed] (0.25,-1) -- (0.25,1);
+		  \draw[thickest,full=0,-stealth] (0.25,0) -- (-14,0);									 
+	     \node[anchor=north east] at (0.25,0) {$\frac{1}{4}$};
+                \end{tikzpicture}
+%d)
+		  \item \ntpb{$ x \ge -18 $} \ntpb{$[-18,\infty)$}\begin{tikzpicture}[x=2mm,y=0.5em]
+		  \draw (-22,0) -- (-10,0);
+		  \draw[dashed] (-18,-1) -- (-18,1);
+		  \draw[thickest,full=0,-stealth] (-18,0) -- (0,0);									 
+	     \node[anchor=north west] at (-18,0) {-18};
+                \end{tikzpicture}
+%e)
+		  \item \ntpb{$ a \ge 2 $} \ntpb{$[2,\infty)$}\begin{tikzpicture}[x=2mm,y=0.5em]
+		  \draw (-2,0) -- (2,0);
+		  \draw[dashed] (2,-1) -- (2,1);
+		  \draw[thickest,full=0,-stealth] (2,0) -- (18,0);									 
+	     \node[anchor=north west] at (2,0) {2};
+                \end{tikzpicture}
+%f)
+		  \item \ntpb{$ y > 1 $} \ntpb{$(1,\infty)$}\begin{tikzpicture}[x=2mm,y=0.5em]
+		  \draw (-2,0) -- (1,0);
+		  \draw[dashed] (1,-1) -- (1,1);
+		  \draw[thickest,empty=0,-stealth] (1,0) -- (18,0);									 
+	     \node[anchor=north west] at (1,0) {1};
+                \end{tikzpicture}
+%g)
+		  \item \ntpb{$ z \le -5$} \ntpb{$(-\infty,5]$}\begin{tikzpicture}[x=2mm,y=0.5em]
+		  \draw (-5,0) -- (-2,0);
+		  \draw[dashed] (-5,-1) -- (-5,1);
+		  \draw[thickest,full=0,-stealth] (-5,0) -- (-22,0);									 
+	     \node[anchor=north west] at (-5,0) {-5};
+                \end{tikzpicture}
+%h)
+		  \item \ntpb{$ n > -2 $} \ntpb{$(-2,\infty)$}\begin{tikzpicture}[x=2mm,y=0.5em]
+		  \draw (-5,0) -- (-2,0);
+		  \draw[dashed] (-2,-1) -- (-2,1);
+		  \draw[thickest,empty=0,-stealth] (-2,0) -- (15,0);									 
+	     \node[anchor=north west] at (-2,0) {-2};
+                \end{tikzpicture}
+
+		  \item \ntpb{$ y \ge -2 $}  \ntpb{$[-2,\infty)$}\begin{tikzpicture}[x=2mm,y=0.5em]
+		  \draw (-5,0) -- (-2,0);
+		  \draw[dashed] (-2,-1) -- (-2,1);
+		  \draw[thickest,full=0,-stealth] (-2,0) -- (15,0);									 
+	     \node[anchor=north west] at (-2,0) {-2};
+                \end{tikzpicture}
 \end{enumerate}
+
+%\begin{tikzpicture}[x=2mm,y=1.2em]
+%		  \draw (-4,0) -- (16,0);
+%		  \draw[dashed] (-4,-1) -- (-4,1);
+%		  \draw[thickest,full=0,-stealth] (6,0) -- (-8,0);									 
+%      \node[anchor=north east] at (-4,0) {-4};
+%\end{tikzpicture}
+
+\subsubsection*{Actividad 76} 
+%Fijarse porque hay muchas raíces complejas...
+\begin{enumerate}[a)]
+		  \item Raíces: $x_0 = 3$, $x_1=2$. Factorizado: $(x-3)(x-2)$
+		  \item $x_0 = 4$, $x_1=-4$, $ \quad (x-4)(x+4)$
+		  \item $x_0 = \sqrt{3}i$, $x_1 = -\sqrt{3}i$, $ \quad (x-\sqrt3i)(x+\sqrt3i)$
+		  \item $x_0 = -\frac{\sqrt3i+1}{2}$, $x_1 = \frac{i\sqrt3i+1}{2}$, $ \quad (x+\frac{\sqrt3i+1}{2})(x-\frac{\sqrt3i+1}{2})$
+		  \item $x_0 = -\frac{1}{10}$, $x_1=\frac{1}{10}$, $ \quad (x+0.1)(x-0.1)$
+
+%		  \item $$
+\end{enumerate}
+
 
 
 \subsection*{Descargar en formato digital}
